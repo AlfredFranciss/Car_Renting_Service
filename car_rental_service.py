@@ -34,7 +34,18 @@ def signup():
         myclient = pymongo.MongoClient(connection_string)
         db = myclient.users
         Users = db["users"]
-
+        # Insert Record
+        connection_customer = db["users"]
+        mydict = {"fname": "John", "lname": "Bellion", "add": "65 Yorkland Blvd, Toronto", "pin": "L6P4M5",
+                  "contact": "+14165640861", "email": "John43@gmail.com", "userid": "John45", "password": "JohnBellion"}
+        mydict2 = {"fname": "Kishan", "lname": "Patel", "add": "235 Pharmacy Ave, Toronto", "pin": "M1L3G1",
+                   "contact": "+14165242361", "email": "ksp11@gmail.com", "userid": "Kishan34", "password": "kp2121"}
+        mydict3 = {"fname": "Misita", "lname": "S", "add": "23 Dennet Drive, Toronto", "pin": "M1L5K1",
+                   "contact": "+16475232321", "email": "ms@gmail.com", "userid": "Misita21", "password": "misita21"}
+        mydict4 = {"fname": "Ayesha", "lname": "Basith", "add": "44 Lupin Drive, Toronto", "pin": "M1K4W2",
+                   "contact": "+14165782836", "email": "ayesha33@gmail.com", "userid": "Ayesha33", "password": "aab45"}
+        mydict5 = {"fname": "Tarun", "lname": "Dutt", "add": "55 Nugget Ave, Toronto", "pin": "N2K3N1",
+                   "contact": "+16477888283", "email": "tdutt44@gmail.com", "userid": "Tarun44", "password": "tdpw44"}
 
     return render_template('sign_up.html', form=form)
 
