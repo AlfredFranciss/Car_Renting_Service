@@ -46,7 +46,11 @@ def signup():
                    "contact": "+14165782836", "email": "ayesha33@gmail.com", "userid": "Ayesha33", "password": "aab45"}
         mydict5 = {"fname": "Tarun", "lname": "Dutt", "add": "55 Nugget Ave, Toronto", "pin": "N2K3N1",
                    "contact": "+16477888283", "email": "tdutt44@gmail.com", "userid": "Tarun44", "password": "tdpw44"}
-
+        x = connection_customer.insert_one(mydict)
+        x = connection_customer.insert_one(mydict2)
+        x = connection_customer.insert_one(mydict3)
+        x = connection_customer.insert_one(mydict4)
+        x = connection_customer.insert_one(mydict5)
     return render_template('sign_up.html', form=form)
 
 
