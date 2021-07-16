@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="shortcut icon" href="./static/image/logo.ico">
+      <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js" ></script>
+
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+      <!-- Optional theme -->
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{{ url_for('login') }}" class="navbar-brand" id="nbrand"><img src="./static/image/logo.png" alt="logo" style="" width="50" height="50">
+                    <b style="float:right; margin-top: -35px;">  CARs FOREVER</b></a>
+
+            </div>
+
+                <ul class="nav navbar-nav navbar-right" style="margin-right: -200px;">
+                    <!--<li> <a href="setting.php" > <span class="glyphicon glyphicon-user"></span> Setting</a></li>
+                    <li><a href="logout.php"> <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>-->
+
+                    <li> <a href="{{ url_for('signup') }}"> <span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                    <li> <a href="{{ url_for('login') }}"> <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                </ul>
+
+        </div>
+    </nav>
+  {% for message in get_flashed_messages() %}
+  <div class="container text-center">
+    <div class="p-3 mb-2 bg-danger text-white">{{ message }}</div>
+  </div>
+  <br>
+  {% endfor %}
+
+
+  {% block main %}{% endblock %}
+  <footer>
+        <div class="container">
+            <p style="text-align: center">
+                Copyright © Cars Forever. All Rights Reserved | Contact Us: +91 90000 00000
+            </p>
+        </div>
+  </footer>
+</body>
+
+</html>
