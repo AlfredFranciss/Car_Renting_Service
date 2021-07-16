@@ -32,7 +32,7 @@ def signup():
     else:
         connection_string = "mongodb+srv://ksp1510:kishan@cluster0.syoit.mongodb.net/db_rental?ssl=true&ssl_cert_reqs=CERT_NONE&retryWrites=true&w=majority"
         myclient = pymongo.MongoClient(connection_string)
-        myclient = pymongo.MongoClient(connection_string)
+
 
 
     return render_template('sign_up.html', form=form)
